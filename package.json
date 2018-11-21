@@ -1,0 +1,44 @@
+{
+  "name": "stack-overflow-react",
+  "version": "1.0.0",
+  "description": "a remake of stackoverflow front end in reactjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfJigsaw/stack-overflow-react.git"
+  },
+  "keywords": [
+    "questions",
+    "answers",
+    "tags",
+    "connect"
+  ],
+  "author": "professor jigsaw",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "bugs": {
+    "url": "https://github.com/ProfJigsaw/stack-overflow-react/issues"
+  },
+  "homepage": "https://github.com/ProfJigsaw/stack-overflow-react#readme"
+}
