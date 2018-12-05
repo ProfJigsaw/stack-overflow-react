@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --coverage",
-    "start": "webpack && node server",
+    "build": "webpack && babel server.js --out-file dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "start:dev": "webpack-dev-server --open"
   },
   "repository": {
@@ -22,8 +23,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "node-sass": "^4.10.0",
     "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react-dom": "^16.6.1",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
