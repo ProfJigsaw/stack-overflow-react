@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import '../public/css/index.css';
+import '../public/css/index.scss';
 
 class App extends React.Component {
     render () {
