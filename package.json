@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --coverage",
-    "start": "webpack-dev-server --open"
+    "build": "webpack && babel server.js --out-file dist/server.js",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "author": "professor jigsaw",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
   },
