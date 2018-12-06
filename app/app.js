@@ -1,18 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Routes from './routes';
 import '../public/css/index.scss';
 
-class App extends React.Component {
-    render () {
-        return (
-            <div>
-                <h1>Hello from REACT!</h1>
-            </div>
-        );
-    }
-}
-
 ReactDom.render(
-    <App />,
+    <Routes />,
     document.getElementById('root')
 );
