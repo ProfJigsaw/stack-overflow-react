@@ -1,5 +1,8 @@
 import { all } from 'redux-saga/effects';
-import { watchFetchQuestions } from './questions';
+import {
+  watchFetchQuestions,
+  watchFetchSingleQuestion
+} from './questions';
 
 /**
  * The root saga
@@ -7,6 +10,7 @@ import { watchFetchQuestions } from './questions';
 function* rootSaga() {
   yield all([
     watchFetchQuestions(),
+    watchFetchSingleQuestion()
   ]);
 }
 
