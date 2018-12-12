@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionCard from './questioncard.jsx';
 
-export default ({ questions, flash }) => {
+export default ({ questions }) => {
     return (
         <div>
             {questions.map((question, i) => {

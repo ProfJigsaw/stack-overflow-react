@@ -8,7 +8,7 @@ export default ({ question }) => {
             <div className="question-card">
                 <div className="side-panel-info">
                     <div className="profile-img">
-                        <img src="public/assets/default.png" id="profile-pic" />
+                        <img src="../../../public/assets/default.png" id="profile-pic" />
                     </div>
                 </div>
                 <div className="question-frame">

@@ -1,19 +1,21 @@
 import * as types from '../actions/actionTypes';
 
 const initalStates = {
-    questions: []
+    question: null,
+    answers: null
 };
 
 const questionReducer = (state = initalStates, action) => {
     switch(action.type) {
-        case types.GET_ALL_QUESTIONS_SUCCESS:
+        case types.GET_SINGLE_QUESTION_SUCCESS:
             state = {
-                questions: action.questions
+                question: action.payload.question || action.payload,
+                answers: action.payload.answers
             };
         break;
-        case types.GET_ALL_QUESTIONS_FAILURE:
+        case types.GET_SINGLE_QUESTION_FAILURE:
             state = {
-                questions: []
+                ...state
             };
         break;
     }

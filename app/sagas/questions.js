@@ -19,7 +19,6 @@ function* fetchQuestionsAsync() {
   } catch (error) {
     yield put({
       type: types.GET_ALL_QUESTIONS_FAILURE,
-      error: ['Error finding questions']
     });
   }
 }
@@ -27,39 +26,32 @@ function* fetchQuestionsAsync() {
 /**
  * Saga to watch request for single questions
  */
-export function* watchFetchSingleQuestion(type, payload) {
-  yield takeEvery('GET_SINGLE_QUESTION', fetchSingleQuestionAsync);
+export function* watchFetchSingleQuestion(type, action) {
+  yield takeEvery(types.GET_SINGLE_QUESTION, fetchSingleQuestionAsync);
 }
 
 function* fetchSingleQuestionAsync(action) {
-
-  console.log('This is the action id: ', action.id);
   try {
       const response = yield call(() => {
         return fetch(`https://nvc-stackqa.herokuapp.com/api/v1/questions/${action.id}`)
         .then(res => res.json())
       }
     );
-    console.log(response.data);
     if (response.data.answers) {
+      console.log(response.data);
       yield put({
-        type: 'GET_SINGLE_QUESTION_SUCCESS',
-        questions: response.data.question
-      });
-      yield put({
-        type: 'GET_QUESTION_ANSWERS',
-        answers: response.data.answers
+        type: types.GET_SINGLE_QUESTION_SUCCESS,
+        payload: response.data
       });
     } else {
       yield put({
-        type: 'GET_SINGLE_QUESTION_SUCCESS',
-        questions: response.data.reverse()
+        type: types.GET_SINGLE_QUESTION_SUCCESS,
+        payload: response.data.reverse()
       });
     }
   } catch (error) {
     yield put({
-      type: 'GET_SINGLE_QUESTION_FAILURE',
-      questions: ['Error finding questions']
+      type: types.GET_SINGLE_QUESTION_FAILURE,
     });
   }
 }
