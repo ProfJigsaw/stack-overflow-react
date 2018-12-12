@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import QuestionLayout from '../questions/questionslayout.jsx';
 
 export default class Homepage extends Component {
   render() {
     return (
-      <div>
-        This is the home page
-      </div>
+      <QuestionLayout {...this.props} />
     )
   }
 }
