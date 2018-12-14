@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Instagram as Waiter } from 'react-content-loader';
-import Questions from './questions';
-import MainLayout from '../containers/layouts/mainlayout';
-import MainContent from '../containers/layouts/contentlayout';
+import Questions from '../questions/questions';
+import MainLayout from './layouts/mainlayout';
+import HomeContent from './layouts/homelayout';
 import store from '../../store';
 import * as types from '../../actions/actionTypes';
 
@@ -20,13 +20,13 @@ class QuestionsLayout extends Component {
     return (
       <div>
         <MainLayout nav>
-          <MainContent {...this.props}>
+          <HomeContent {...this.props}>
             {
               questions
                 ? <Questions questions={questions} />
                 : <Waiter />
             }
-          </MainContent>
+          </HomeContent>
         </MainLayout>
       </div>
     );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import PropTypes from 'prop-types';
 import MainLayout from '../containers/layouts/mainlayout';
-import { signUserUp } from '../../utilities/users';
+import { signUserIn } from '../../utilities/users';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Signup extends React.Component {
       errors: {},
       isLoading: true
     });
-    signUserUp(this.state)
+    signUserIn(this.state)
       .then((response) => {
         localStorage.setItem('stack-jwt', response.data.token);
         const decodedInfo = jwtDecode(response.data.token);
@@ -62,7 +62,7 @@ class Signup extends React.Component {
           <br />
           <div className="wrapper forms">
             <form className="form">
-              <h1 className="form-title">Join our community</h1>
+              <h1 className="form-title">Welcome back</h1>
               <div className="form-group">
                 <input
                   name="username"
@@ -70,17 +70,6 @@ class Signup extends React.Component {
                   type="text"
                   placeholder="Username"
                   value={this.state.username}
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div className="form-group">
-                <input
-                  name="email"
-                  className={`form-input ${errors.message && 'input-error'}`}
-                  type="text"
-                  placeholder="Email"
-                  value={this.state.email}
                   onChange={this.handleChange}
                 />
               </div>
@@ -101,11 +90,11 @@ class Signup extends React.Component {
                 onClick={this.handleSubmit}
                 disabled={this.state.isLoading}
               >
-              Sign Up
+              Sign In
               </button>
 
-              <Link className="sign-info" to="/login">
-                  Already have an account? Sign in instead
+              <Link className="sign-info" to="/signup">
+                  Dont have an account? Sign Up instead
               </Link>
               {
                 errors.message

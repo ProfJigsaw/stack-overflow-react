@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import QuestionLayout from '../questions/questionslayout.jsx';
+import React, { Component } from 'react';
+import HomeContent from '../containers/homecontent';
 
 export default class Homepage extends Component {
   render() {
     return (
-      <QuestionLayout {...this.props} />
-    )
+      <HomeContent {...this.props} />
+    );
   }
 }

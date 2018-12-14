@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContentLayout = ({ children, match }) => {
+const HomeLayout = ({ children, match }) => {
   return (
     <div className="main-content">
       <div className="col col-1">
@@ -20,6 +20,7 @@ const ContentLayout = ({ children, match }) => {
             <span className="question-url">Home{match.url}</span>
           </i>
         </div>
+        <div className="banner" />
         {children}
       </div>
       <div className="col col-3">
@@ -28,15 +29,14 @@ const ContentLayout = ({ children, match }) => {
           className="form-input"
           type="submit"
           placeholder="ASK"
-          value="Ask A Question"
-        />
+          value="Ask A Question"/>
         <hr />
         <div className="activity">
-          Top Question
+            Top Question
         </div>
       </div>
     </div>
   );
 };
 
-export default ContentLayout;
+export default HomeLayout;
