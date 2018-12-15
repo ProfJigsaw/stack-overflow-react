@@ -102,6 +102,9 @@ class Signup extends React.Component {
                 disabled={this.state.isLoading}
               >
               Sign Up
+                {
+                  this.state.isLoading && <i className="fa fa-spinner fa-spin" />
+                }
               </button>
 
               <Link className="sign-info" to="/login">

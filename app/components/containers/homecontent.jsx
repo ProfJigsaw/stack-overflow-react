@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Instagram as Waiter } from 'react-content-loader';
+import { List as Waiter } from 'react-content-loader';
 import Questions from '../questions/questions';
 import MainLayout from './layouts/mainlayout';
 import HomeContent from './layouts/homelayout';
@@ -17,14 +17,15 @@ class QuestionsLayout extends Component {
 
   render() {
     const { questions } = this.props;
+    console.log(questions);
     return (
       <div>
         <MainLayout nav>
           <HomeContent {...this.props}>
             {
-              questions
+              questions.length
                 ? <Questions questions={questions} />
-                : <Waiter />
+                : <div><p /><Waiter /><Waiter /></div>
             }
           </HomeContent>
         </MainLayout>

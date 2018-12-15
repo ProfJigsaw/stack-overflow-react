@@ -91,11 +91,15 @@ class Signup extends React.Component {
                 disabled={this.state.isLoading}
               >
               Sign In
+                {
+                  this.state.isLoading && <i className="fa fa-spinner fa-spin" />
+                }
               </button>
 
               <Link className="sign-info" to="/signup">
                   Dont have an account? Sign Up instead
               </Link>
+
               {
                 errors.message
               && <p className="error-info">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeLayout = ({ children, match }) => {
   return (
@@ -6,8 +7,8 @@ const HomeLayout = ({ children, match }) => {
       <div className="col col-1">
         <div className="wrapper">
           <ul className="stack-links">
-            <li className="side-links"><i className="fas fa-home" />Home</li>
-            <li className="side-links"><i className="fas fa-book" />Questions</li>
+            <li className="side-links"><Link to="/"><i className="fas fa-home" />Home</Link></li>
+            <li className="side-links"><Link to="/questions"><i className="fas fa-book" />Questions</Link></li>
             <li className="side-links"><i className="fas fa-tags" />Tags</li>
             <li className="side-links"><i className="fas fa-users" />Users</li>
           </ul>
@@ -24,12 +25,12 @@ const HomeLayout = ({ children, match }) => {
         {children}
       </div>
       <div className="col col-3">
-        <input
+        <button
           id="ask"
-          className="form-input"
-          type="submit"
-          placeholder="ASK"
-          value="Ask A Question"/>
+          className="form-button full-width"
+        >
+          Ask A Question
+        </button>
         <hr />
         <div className="activity">
             Top Question

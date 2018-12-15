@@ -28,6 +28,11 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid #0a6b7f;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
 header {
 	top: 0;
 	position: fixed;
@@ -53,6 +58,7 @@ header {
   height: 60px;
   padding: 10px 10px;
   position: relative;
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #000;
 }
 .navbar-logo > img {
   transform: translateX(15px) scale(2);
@@ -155,6 +161,18 @@ header {
 .navbar-toggle .hamburger.open span:nth-child(3) {
   top: 22px;
   transform: rotate(-135deg);
+}
+
+.search {
+  & span {
+    color: #f1f1f1;
+  }
+}
+
+.search-wrapper > input {
+  width: 80%;
+  float: left;
+  color: #f1f1f1;
 }
 
 .background {
@@ -294,6 +312,7 @@ footer {
   text-decoration: none;
   margin: 4px 0;
   text-align: center;
+  color: #333;
 }
 
 .wrapper {
@@ -356,6 +375,13 @@ ul.stack-links {
   background: #f1f1f1;
   border-radius: 4px;
   position: relative;
+  transition: ease-in-out all .2s;
+  -webkit-transition: ease-in-out all .2s;
+  &:hover {
+    box-shadow: 0 0.5px 0 0 #ffffff inset, 0 0px 0px 2px #ccc;
+    transition: ease-in-out all .2s;
+  -webkit-transition: ease-in-out all .2s;
+  }
 }
 
 .question-card, .answer-card {
@@ -489,26 +515,16 @@ ul.stack-links {
  border-bottom:1px solid #1a73a8;
 }
 
-.form-input:focus ~ .form-label,
-.form-input:not(:placeholder-shown) ~ .form-label{
-  top:-18px;
-  font-size:12px;
-  color:#e0e0e0
-}
-
 .form-button{
   padding: 10px 20px;
   border:none;
   border-radius:5px;
   color:#fff;
-  background: linear-gradient(to left, #2C5364, #203A43, #2C5364);
+  background: linear-gradient(to left, #2C5364, rgb(44, 80, 92), #2C5364);
   outline: none;
   cursor: pointer;
   transition:0.3s;
+  &.full-width {
+    width: 100%;
+  }
 }
-
-
-
-/* ======================================================================= */
-
-/* SKELETON SCREEN */
