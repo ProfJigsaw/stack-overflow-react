@@ -2,7 +2,7 @@ import React from 'react';
 import avatar from '../../../public/assets/default.png';
 
 const AnswerCard = ({ answer }) => {
-  const date = new Date(answer.createdAt);
+  const date = new Date(answer.createdat);
   return (
     <div>
       <div className="answer-card">
@@ -22,7 +22,10 @@ const AnswerCard = ({ answer }) => {
               answer.state
                 ? (
                   <span>
-                    <i className="fa fa-check fa-2x" style={{ color: 'green' }}/>
+                    <i
+                      className="fa fa-check fa-2x"
+                      style={{ color: 'green' }}
+                    />
                   </span>
                 )
                 : (<div />)

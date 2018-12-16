@@ -24,12 +24,14 @@ const ContentLayout = ({ children, match }) => {
         {children}
       </div>
       <div className="col col-3">
-        <button
-          id="ask"
-          className="form-button full-width"
-        >
-          Ask A Question
-        </button>
+        <Link to="/ask" >
+          <button
+            id="ask"
+            className="form-button full-width"
+          >
+            Ask A Question
+          </button>
+        </Link>
         <hr />
         <div className="activity">
           Top Question

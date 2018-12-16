@@ -403,11 +403,15 @@ ul.stack-links {
   }
 }
 
-.question-card .side-panel-info .profile-img > img{
-  max-width: 30px;
-  max-height: 30px;
-  border-radius: 50%;
+.question-card, .answer-card {
+  & .side-panel-info .profile-img > img{
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50%;
+    margin: auto;
+  }
 }
+
 
 .question-card .side-panel-info .question-rating {
   min-height: 150px;
@@ -479,6 +483,21 @@ ul.stack-links {
   margin: 0 auto 0 auto;
   background: #f1f1f1;
 }
+.qform{
+  width: 100%;
+  min-height: 500px;
+  padding: 32px;
+  border-radius:5px;
+  box-shadow: 0 1px 1px #ccc;
+  font-family: sans-serif;
+  letter-spacing:1px;
+  margin: 30px auto 0 auto;
+  background: #f1f1f1;
+  & textarea {
+    min-height: 300px;
+  }
+}
+
 .form-input,
 .form-button{
   font-family: sans-serif;
@@ -527,4 +546,14 @@ ul.stack-links {
   &.full-width {
     width: 100%;
   }
+}
+
+.reply-button {
+  cursor: pointer;
+  outline: none;
+  height: 30px;
+  width: 120px;
+  float: right;
+  margin: 0 10px 0 0;
+  border-radius: 8px;
 }
