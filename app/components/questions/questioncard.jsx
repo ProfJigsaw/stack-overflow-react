@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import avatar from '../../../public/assets/default.png';
 
 const QuestionCard = ({ question }) => {
-  const date = new Date(question.createdAt);
+  const date = new Date(question.createdat);
   return (
     <div>
       <div className="question-card">
@@ -31,7 +31,7 @@ const QuestionCard = ({ question }) => {
             {question.question}
           </div>
           <div className="question-misc">
-            Question misc
+            <button className="reply-button">Add answer<i className="fa fa-reply" /></button>
           </div>
         </div>
       </div>

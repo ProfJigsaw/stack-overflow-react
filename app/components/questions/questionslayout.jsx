@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Instagram as Waiter } from 'react-content-loader';
+import { List as Waiter } from 'react-content-loader';
 import Questions from './questions';
 import MainLayout from '../containers/layouts/mainlayout';
 import MainContent from '../containers/layouts/contentlayout';

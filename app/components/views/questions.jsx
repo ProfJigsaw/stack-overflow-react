@@ -1,13 +1,23 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import QuestionsThreadLayout from '../../components/questions/questionthreadlayout.jsx';
-import Homepage from './homepage.jsx';
+import PropTypes from 'prop-types';
+import QuestionsThreadLayout from '../questions/questionthreadlayout';
+import Homepage from './homepage';
 
-export default ({ match }) => {
-    return (
-        <div>
-            <Route exact path={`${match.path}/:id`} component={QuestionsThreadLayout} />
-            <Route exact path='/questions' component={Homepage} /> 
-        </div> 
-    );
-}
+const QuestionPage = ({ match }) => {
+  return (
+    <div>
+      <Route
+        exact path={`${match.path}/:id`}
+        component={QuestionsThreadLayout}
+      />
+      <Route exact path="/questions" component={Homepage} />
+    </div>
+  );
+};
+
+QuestionPage.propTypes = {
+  match: PropTypes.object.isRequired
+};
+
+export default QuestionPage;
