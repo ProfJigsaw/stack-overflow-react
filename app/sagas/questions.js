@@ -1,5 +1,24 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
+import axios from 'axios';
 import * as types from '../actions/actionTypes';
+
+/**
+ * Function to return all
+ * questions from the database
+ * @returns {object} questions
+ */
+const getQuestions = () => {
+  return axios.get('https://nvc-stackqa.herokuapp.com/api/v1/questions');
+};
+
+/**
+ * Function to return a single
+ * question from the database
+ * @returns {object} questions
+ */
+const getSingleQuestion = (id) => {
+  return axios.get(`https://nvc-stackqa.herokuapp.com/api/v1/questions/${id}`);
+};
 
 /**
  * Generator function to make
@@ -7,13 +26,10 @@ import * as types from '../actions/actionTypes';
  */
 function* fetchQuestionsAsync() {
   try {
-    const response = yield call(() => {
-      return fetch('https://nvc-stackqa.herokuapp.com/api/v1/questions')
-        .then(response => response.json());
-    });
+    const response = yield call(getQuestions);
     yield put({
       type: types.GET_ALL_QUESTIONS_SUCCESS,
-      questions: response.questions.reverse()
+      questions: response.data.questions.reverse()
     });
   } catch (error) {
     yield put({
@@ -37,20 +53,16 @@ export function* watchFetchQuestions() {
  */
 function* fetchSingleQuestionAsync(action) {
   try {
-    const response = yield call(() => {
-      return fetch(`https://nvc-stackqa.herokuapp.com/api/v1/questions/${action.id}`)
-        .then(res => res.json());
-    });
-    if (response.data.answers) {
-      console.log(response.data);
+    const response = yield call(() => getSingleQuestion(action.id));
+    if (response.data.data.answers) {
       yield put({
         type: types.GET_SINGLE_QUESTION_SUCCESS,
-        payload: response.data
+        payload: response.data.data
       });
     } else {
       yield put({
         type: types.GET_SINGLE_QUESTION_SUCCESS,
-        payload: response.data.reverse()
+        payload: response.data.data.reverse()
       });
     }
   } catch (error) {

@@ -8,6 +8,14 @@ export const getToken = () => {
 };
 
 /**
+ * Function to get user id
+ * @returns {integer} id
+ */
+export const getUserId = () => {
+  return localStorage.getItem('stack-userid');
+};
+
+/**
  * Function to check the
  * signin state of a user
  * @returns {boolean} login state
