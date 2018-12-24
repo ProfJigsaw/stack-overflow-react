@@ -15,7 +15,7 @@ const AnswerCard = ({ answer }) => {
           <div className="question-title">
             <p>
               {answer.username} - Answered: {
-                `${date.toLocaleTimeString()} - ${date.toLocaleDateString()}`
+                `${date.toLocaleDateString()}`
               }
             </p>
             {

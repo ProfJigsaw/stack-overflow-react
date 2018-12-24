@@ -17,7 +17,6 @@ class QuestionCard extends Component {
   }
 
   handleDelete(event) {
-    event.preventDefault();
     const id = event.target.getAttribute('qid');
     const uid = event.target.getAttribute('uid');
     if (parseInt(uid, 0) !== parseInt(getUserId(), 0)) {
@@ -74,7 +73,9 @@ class QuestionCard extends Component {
               {question.question}
             </div>
             <div className="question-misc">
-              <span className="delete" onClick={this.handleDelete}>
+              <span
+                data-testid="trash"
+                className="delete" onClick={this.handleDelete}>
                 <i
                   qid={`${question.questionid}`}
                   uid={`${question.userid}`}

@@ -30,3 +30,12 @@ export const isLoggedIn = () => {
   }
   return loginState;
 };
+
+
+/**
+ * Function to get username
+ * @returns {string} username
+ */
+export const getUsername = () => {
+  return localStorage.getItem('stack-username');
+};

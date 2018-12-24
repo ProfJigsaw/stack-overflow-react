@@ -4,20 +4,17 @@ import { List as Waiter } from 'react-content-loader';
 import Questions from '../questions/questions';
 import MainLayout from './layouts/mainlayout';
 import HomeContent from './layouts/homelayout';
-import store from '../../store';
-import * as types from '../../actions/actionTypes';
+import { getAllQuestions } from '../../actions/actions';
 
 class QuestionsLayout extends Component {
   componentDidMount() {
-    store.dispatch({
-      type: types.GET_ALL_QUESTIONS
-    });
+    const { getQuestions } = this.props;
+    getQuestions();
     window.scrollTo(0, 0);
   }
 
   render() {
     const { questions } = this.props;
-    console.log(questions);
     return (
       <div>
         <MainLayout nav>
@@ -40,4 +37,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(QuestionsLayout);
+export default connect(mapStateToProps, {
+  getQuestions: getAllQuestions
+})(QuestionsLayout);
