@@ -53,7 +53,7 @@ export function* watchFetchQuestions() {
  */
 function* fetchSingleQuestionAsync(action) {
   try {
-    const response = yield call(() => getSingleQuestion(action.id));
+    const response = yield call(() => getSingleQuestion(action.payload));
     if (response.data.data.answers) {
       yield put({
         type: types.GET_SINGLE_QUESTION_SUCCESS,
@@ -75,6 +75,6 @@ function* fetchSingleQuestionAsync(action) {
 /**
  * Saga to watch request for single questions
  */
-export function* watchFetchSingleQuestion(type, action) {
+export function* watchFetchSingleQuestion() {
   yield takeEvery(types.GET_SINGLE_QUESTION, fetchSingleQuestionAsync);
 }

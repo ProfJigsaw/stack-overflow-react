@@ -13,4 +13,15 @@ export const postQuestion = ({ title, body }) => {
     });
 };
 
-export const dummy = 'dddd';
+export const addAnswer = (qid, { answer }) => {
+  return axios.post(
+    `https://nvc-stackqa.herokuapp.com/api/v1/questions/${qid}/answers`,
+    {
+      answer
+    }, {
+      headers: {
+        authorization: `Bearer ${getToken()}`
+      }
+    }
+  );
+};
