@@ -76,7 +76,7 @@ class Answer extends Component {
             message: 'Could not post answer',
             error
           },
-          isPosting: true
+          isPosting: false
         });
         setTimeout(() => {
           this.setState({
