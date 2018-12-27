@@ -17,10 +17,11 @@ const questionReducer = (state = initalStates, action) => {
     };
     break;
   case types.DELETE_QUESTION:
-
     state = {
       questions: state.questions
-        .filter(question => question.questionid !== parseInt(action.payload, 0))
+        .filter(
+          question => question.questionid !== parseInt(action.payload, 10)
+        )
     };
     break;
   default:

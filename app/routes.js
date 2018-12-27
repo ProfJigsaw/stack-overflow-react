@@ -5,6 +5,7 @@ import QuestionRoutes from './components/views/questions';
 import Ask from './components/views/newquestion';
 import Signup from './components/views/signup';
 import Signin from './components/views/signin';
+import Profile from './components/views/profilepage';
 import NotFoundPage from './components/views/notfound';
 
 const Routes = () => {
@@ -16,6 +17,7 @@ const Routes = () => {
         <Route path="/ask" component={Ask} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Signin} />
+        <Route exact path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
     </Router>
