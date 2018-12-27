@@ -7,14 +7,27 @@ const HomeLayout = ({ children, match }) => {
       <div className="col col-1">
         <div className="wrapper">
           <ul className="stack-links">
-            <li className="side-links"><Link to="/"><i className="fas fa-home" />Home</Link></li>
-            <li className="side-links"><Link to="/questions"><i className="fas fa-book" />Questions</Link></li>
-            <li className="side-links"><i className="fas fa-tags" />Tags</li>
-            <li className="side-links"><i className="fas fa-users" />Users</li>
+            <li className="side-links">
+              <Link to="/"><i className="fas fa-home" />
+                <span>  Home</span>
+              </Link>
+            </li>
+            <li className="side-links">
+              <Link to="/questions"><i className="fas fa-book" />
+                <span>  Questions</span>
+              </Link>
+            </li>
+            <li className="side-links">
+              <i className="fas fa-tags" />
+              <span>  Tags</span>
+            </li>
+            <li className="side-links">
+              <i className="fas fa-users" />
+              <span>  Users</span>
+            </li>
           </ul>
         </div>
       </div>
-
       <div className="col col-2">
         <div className="home">
           <i className="fas fa-home">

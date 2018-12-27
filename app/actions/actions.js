@@ -13,3 +13,7 @@ export const addNewAnswerToStore = input => ({
   type: types.ADD_NEW_ANSWER,
   payload: input
 });
+
+export const userProfileRequest = () => ({
+  type: types.USER_PROFILE_REQUEST
+});

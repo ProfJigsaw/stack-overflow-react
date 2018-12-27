@@ -89,10 +89,6 @@ class QuestionCard extends Component {
                   )
                 }
               </span>
-              <button className="reply-button">
-              Add answer
-                <i className="fa fa-reply" />
-              </button>
             </div>
           </div>
         </div>

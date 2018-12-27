@@ -3,6 +3,7 @@ import {
   watchFetchQuestions,
   watchFetchSingleQuestion
 } from './questions';
+import watchUserProfile from './profile';
 
 /**
  * The root saga
@@ -10,7 +11,8 @@ import {
 function* rootSaga() {
   yield all([
     watchFetchQuestions(),
-    watchFetchSingleQuestion()
+    watchFetchSingleQuestion(),
+    watchUserProfile()
   ]);
 }
 

@@ -1,9 +1,22 @@
 export const questions = [
   {
-    title: 'dummy title'
+    title: 'dummy title',
+    userid: 7
   },
   {
-    title: 'second title'
+    title: 'second title',
+    userid: 7
+  }
+];
+
+export const answers = [
+  {
+    title: 'dummy title',
+    userid: 7
+  },
+  {
+    title: 'second title',
+    userid: 7
   }
 ];
 

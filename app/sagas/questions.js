@@ -14,6 +14,7 @@ const getQuestions = () => {
 /**
  * Function to return a single
  * question from the database
+ * @param {number} id
  * @returns {object} questions
  */
 const getSingleQuestion = (id) => {
@@ -29,7 +30,8 @@ function* fetchQuestionsAsync() {
     const response = yield call(getQuestions);
     yield put({
       type: types.GET_ALL_QUESTIONS_SUCCESS,
-      questions: response.data.questions.reverse()
+      questions: response.data.questions
+        .sort((a, b) => b.questionid - a.questionid)
     });
   } catch (error) {
     yield put({
