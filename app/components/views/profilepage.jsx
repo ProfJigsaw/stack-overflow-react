@@ -47,7 +47,7 @@ class ProfilePage extends PureComponent {
     const { questions, answers, loaded } = this.props;
     const { displayQuestions, displayAnswers } = this.state;
     return (
-      <MainLayout nav>
+      <MainLayout nav {...this.props} >
         <ContentLayout {...this.props}>
           {
             loaded

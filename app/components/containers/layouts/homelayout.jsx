@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TopQuestion from '../topquestion';
 
 const HomeLayout = ({ children, match }) => {
   return (
@@ -48,7 +49,8 @@ const HomeLayout = ({ children, match }) => {
         </Link>
         <hr />
         <div className="activity">
-            Top Question
+          <span className="top-decorator">Top Question</span>
+          <TopQuestion />
         </div>
       </div>
     </div>

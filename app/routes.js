@@ -6,6 +6,7 @@ import Ask from './components/views/newquestion';
 import Signup from './components/views/signup';
 import Signin from './components/views/signin';
 import Profile from './components/views/profilepage';
+import Search from './components/views/search';
 import NotFoundPage from './components/views/notfound';
 
 const Routes = () => {
@@ -18,6 +19,7 @@ const Routes = () => {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Signin} />
         <Route exact path="/profile" component={Profile} />
+        <Route path="/search" component={Search} />
         <Route component={NotFoundPage} />
       </Switch>
     </Router>

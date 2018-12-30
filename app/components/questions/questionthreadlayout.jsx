@@ -32,7 +32,7 @@ class QuestionsLayout extends Component {
     } = this.props;
     return (
       <div>
-        <MainLayout nav>
+        <MainLayout nav {...this.props}>
           <MainContent {...this.props}>
             {
               question

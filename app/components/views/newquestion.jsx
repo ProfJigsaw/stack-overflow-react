@@ -17,7 +17,7 @@ export default function newquestion(props) {
     return (<Redirect to="/login" />);
   }
   return (
-    <MainLayout nav>
+    <MainLayout nav {...props}>
       <ContentLayout {...props}>
         <Ask {...props} />
       </ContentLayout>
