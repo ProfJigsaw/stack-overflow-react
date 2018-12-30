@@ -17,7 +17,7 @@ class QuestionsLayout extends Component {
     const { questions } = this.props;
     return (
       <div>
-        <MainLayout nav>
+        <MainLayout nav {...this.props}>
           <HomeContent {...this.props}>
             {
               questions.length

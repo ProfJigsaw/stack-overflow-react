@@ -17,3 +17,12 @@ export const addNewAnswerToStore = input => ({
 export const userProfileRequest = () => ({
   type: types.USER_PROFILE_REQUEST
 });
+
+export const searchRequest = payload => ({
+  type: types.SEARCH_REQUEST,
+  payload
+});
+
+export const topQuestionRequest = () => ({
+  type: types.TOP_QUESTION_REQUEST
+});
