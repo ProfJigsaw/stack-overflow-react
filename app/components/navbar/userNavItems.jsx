@@ -33,7 +33,10 @@ const UserNav = ({ logOut }) => {
             <Link className="link nav-link" to="/profile">Profile</Link>
           </li>
           <li className="nav-item">
-            <span className="link nav-link" onClick={logOut}>Logout</span>
+            <span
+              data-testid="logout-button"
+              className="link nav-link"
+              onClick={logOut}>Logout</span>
           </li>
         </ul>
       </nav>

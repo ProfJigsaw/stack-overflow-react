@@ -10,14 +10,13 @@ class QuestionsLayout extends Component {
   componentDidMount() {
     const { getQuestions } = this.props;
     getQuestions();
-    window.scrollTo(0, 0);
   }
 
   render() {
     const { questions } = this.props;
     return (
       <div>
-        <MainLayout nav>
+        <MainLayout nav {...this.props}>
           <MainContent {...this.props}>
             {
               questions

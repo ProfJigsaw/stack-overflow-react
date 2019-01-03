@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavItems from '../navbar/navbar.jsx';
-import SearchBar from '../searchbar/searchbar.jsx';
+import NavItems from '../navbar/navbar';
+import SearchBar from '../searchbar/searchbar';
 import icon from '../../../public/assets/logo.ico';
 
-export default (props) => {
+const Header = (props) => {
   const { nav } = props;
   return (
     <header>
@@ -21,3 +21,5 @@ export default (props) => {
     </header>
   );
 };
+
+export default Header;

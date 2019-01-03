@@ -35,6 +35,7 @@ class SearchBar extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="search-wrapper">
             <input
+              data-testid="search-input"
               onChange={this.handleChange}
               className="form-input"
               type="text"
@@ -43,7 +44,9 @@ class SearchBar extends React.Component {
             />
           </div>
           <span className="search-button">
-            <i onClick={this.handleSubmit} className="fa fa-search" />
+            <i
+              data-testid="search-button"
+              onClick={this.handleSubmit} className="fa fa-search" />
           </span>
         </form>
       </div>

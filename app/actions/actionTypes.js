@@ -15,7 +15,12 @@ export const DELETE_QUESTION = 'DELETE_QUESTION';
 
 export const ADD_NEW_ANSWER = 'ADD_NEW_ANSWER';
 
+export const ADD_NEW_COMMENT = 'ADD_NEW_COMMENT';
+
+export const ACCEPT_ANSWER = 'ACCEPT_ANSWER';
+
 export const UPVOTE_ANSWER = 'UPVOTE_ANSWER';
+export const DOWNVOTE_ANSWER = 'DOWNVOTE_ANSWER';
 
 
 export const GET_ALL_REPLIES = 'GET_ALL_REPLIES';

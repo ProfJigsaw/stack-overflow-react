@@ -46,7 +46,7 @@ class TopQuestion extends Component {
               </div>
               <div className="question-misc">
                 <i className="fa fa-chat" />
-                    Answers: {count}
+                {count} answer{count === 1 ? '' : 's'} given
               </div>
             </div>
           </div>

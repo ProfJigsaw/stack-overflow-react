@@ -75,6 +75,7 @@ class Ask extends Component {
         <form className="qform">
           <div className="form-group">
             <input
+              data-testid="title-input"
               name="title"
               className={`form-input ${errors.message && 'input-error'}`}
               type="text"
@@ -86,6 +87,7 @@ class Ask extends Component {
 
           <div className="form-group">
             <textarea
+              data-testid="body-input"
               name="body"
               className={`form-input ${errors.message && 'input-error'}`}
               placeholder="Enter the question body ..."
@@ -96,6 +98,7 @@ class Ask extends Component {
 
           <div className="form-group">
             <input
+              data-testid="tags-input"
               name="tags"
               className={`form-input ${errors.message && 'input-error'}`}
               type="text"
@@ -106,6 +109,7 @@ class Ask extends Component {
           </div>
 
           <button
+            data-testid="submit-button"
             className="form-button"
             onClick={this.handleSubmit}
             disabled={this.state.isLoading}
