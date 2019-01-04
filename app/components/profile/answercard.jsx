@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import avatar from '../../../public/assets/default.png';
 
@@ -48,6 +49,10 @@ const AnswerCard = ({ answer }) => {
       </div>
     </div>
   );
+};
+
+AnswerCard.propTypes = {
+  answer: PropTypes.object.isRequired
 };
 
 export default AnswerCard;

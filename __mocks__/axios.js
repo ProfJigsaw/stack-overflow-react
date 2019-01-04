@@ -8,4 +8,8 @@ export default {
   delete: jest.fn(() => Promise.resolve({
     data: {}
   })),
+  put: jest.fn(() => Promise.resolve({
+    data: {},
+    status: 202
+  })),
 };

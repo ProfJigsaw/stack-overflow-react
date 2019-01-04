@@ -26,3 +26,23 @@ export const searchRequest = payload => ({
 export const topQuestionRequest = () => ({
   type: types.TOP_QUESTION_REQUEST
 });
+
+export const upvoteAnswer = id => ({
+  type: types.UPVOTE_ANSWER,
+  payload: id
+});
+
+export const downVote = id => ({
+  type: types.DOWNVOTE_ANSWER,
+  payload: id
+});
+
+export const addComment = comment => ({
+  type: types.ADD_NEW_COMMENT,
+  payload: comment
+});
+
+export const acceptAnswer = id => ({
+  type: types.ACCEPT_ANSWER,
+  payload: id
+});

@@ -16,10 +16,9 @@ class QuestionCard extends Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleDelete(event) {
-    const id = event.target.getAttribute('qid');
-    const uid = event.target.getAttribute('uid');
-    if (parseInt(uid, 0) !== parseInt(getUserId(), 0)) {
+  handleDelete() {
+    const { questionid, userid } = this.props.question;
+    if (parseInt(userid, 10) !== parseInt(getUserId(), 10)) {
       this.setState({
         isAuthorized: false
       });
@@ -31,15 +30,17 @@ class QuestionCard extends Component {
     }
     store.dispatch({
       type: types.DELETE_QUESTION,
-      payload: id
+      payload: questionid
     });
     return axios
-      .delete(`https://nvc-stackqa.herokuapp.com/api/v1/questions/${id}`,
+      .delete(
+        `https://nvc-stackqa.herokuapp.com/api/v1/questions/${questionid}`,
         {
           headers: {
             authorization: `Bearer ${getToken()}`
           }
-        });
+        }
+      );
   }
 
   render() {
@@ -76,11 +77,7 @@ class QuestionCard extends Component {
               <span
                 data-testid="trash"
                 className="delete" onClick={this.handleDelete}>
-                <i
-                  qid={`${question.questionid}`}
-                  uid={`${question.userid}`}
-                  className="fa fa-trash"
-                />
+                <i className="fa fa-trash" />
                 {
                   !isAuthorized
                   && (

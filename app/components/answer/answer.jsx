@@ -93,6 +93,7 @@ class Answer extends Component {
         <form className="qform">
           <div className="form-group">
             <textarea
+              data-testid="answer-input"
               name="answer"
               className={`form-input ${errors.message && 'input-error'}`}
               placeholder="Add your answer ..."
@@ -102,6 +103,7 @@ class Answer extends Component {
           </div>
 
           <button
+            data-testid="answer-button"
             className="form-button"
             onClick={this.handleSubmit}
             disabled={isPosting}
@@ -126,7 +128,8 @@ class Answer extends Component {
 
 Answer.propTypes = {
   history: PropTypes.object.isRequired,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  addAnswerToStore: PropTypes.func.isRequired
 };
 
 export default Answer;

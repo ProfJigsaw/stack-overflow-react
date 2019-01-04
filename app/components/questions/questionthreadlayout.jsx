@@ -11,7 +11,7 @@ import {
 import MainLayout from '../containers/layouts/mainlayout';
 import MainContent from '../containers/layouts/contentlayout';
 
-class QuestionsLayout extends Component {
+class QuestionsThreadLayout extends Component {
   componentDidMount() {
     const {
       getQuestion,
@@ -22,7 +22,6 @@ class QuestionsLayout extends Component {
       }
     } = this.props;
     getQuestion(id);
-    window.scrollTo(0, 0);
   }
 
   render() {
@@ -68,4 +67,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   addAnswerToStore: addNewAnswerToStore,
   getQuestion: getSingleQuestion
-})(QuestionsLayout);
+})(QuestionsThreadLayout);
